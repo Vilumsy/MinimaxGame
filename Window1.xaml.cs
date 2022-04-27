@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,10 @@ namespace WpfApp1
         {
             login lg = new login();
             lg.Show();
-            for (int intCounter = 6; intCounter >= 0; intCounter--)
+            for (int intCounter = App.Current.Windows.Count - 2; intCounter >= 0; intCounter--)
                 App.Current.Windows[intCounter].Close();
+            
+
 
         }
     }

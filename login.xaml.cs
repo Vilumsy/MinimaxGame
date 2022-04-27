@@ -28,12 +28,11 @@ namespace WpfApp1
 
         private void proceed_Click(object sender, RoutedEventArgs e)
         {
-            Regex rgx = new Regex("[0-9]{4}");
-            MainWindow mainWindow = new MainWindow();        
-            
+            Regex rgx = new Regex("^[0-9]{4}$");
+            MainWindow mainWindow = new MainWindow();
+            Starting.data = Backend.SortString(enter.Text);
             if (computer.IsChecked == true && human.IsChecked == false&& rgx.IsMatch(Starting.data))
             {
-                Starting.data = Backend.SortString(enter.Text);
                 Backend.createTree2(Starting.data, Starting);
                 Backend.MiniMaxSmol(Starting);
                 Backend.aistarts = true;
@@ -45,9 +44,13 @@ namespace WpfApp1
                                select ch;
                 Starting = MaxChild.First();
                 mainWindow.Starting = Starting;
-                mainWindow.Show();
                 mainWindow.lbl_main.Content = Starting.data;
-                
+                mainWindow.st.Text = Starting.ScoreMax.ToString();
+                mainWindow.nd.Text = Starting.ScoreMin.ToString();
+                mainWindow.Show();
+
+
+
             }
             else if(computer.IsChecked == false&&human.IsChecked==true && rgx.IsMatch(Starting.data))
             {
