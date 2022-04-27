@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="Button" Content="Next" HorizontalAlignment="Center" Margin="0,338,0,0" VerticalAlignment="Top" Height="66" Width="236" Click="Button_Click" Background="White" FontFamily="Chiller" FontSize="50" BorderBrush="White"/>
-        <Label x:Name="lbl_main" Content="heyop" HorizontalAlignment="Left" Margin="282,97,0,0" VerticalAlignment="Top" Height="120" Width="276" RenderTransformOrigin="12.795,-4.317" FontSize="100" FontFamily="Chiller"/>
-        <TextBox x:Name="inp_box" HorizontalAlignment="Center" Margin="0,264,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35" Height="47" FontSize="40" FontFamily="Chiller"/>
+        <Button x:Name="Button" Content="Next" HorizontalAlignment="Left" Margin="242,339,0,0" VerticalAlignment="Top" Height="66" Width="236" Click="Button_Click" Background="White" FontFamily="Chiller" FontSize="50" BorderBrush="White"/>
+        <Label x:Name="lbl_main" Content="heyo" HorizontalAlignment="Left" Margin="282,123,0,0" VerticalAlignment="Top" Height="120" Width="276" RenderTransformOrigin="12.795,-4.317" FontSize="100" FontFamily="Chiller"/>
+        <TextBox x:Name="inp_box" HorizontalAlignment="Left" Margin="344,265,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="34" Height="47" FontSize="40" FontFamily="Chiller"/>
         <TextBlock x:Name="nd" HorizontalAlignment="Left" Margin="585,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="402" Width="174" RenderTransformOrigin="0.515,0.525" FontSize="350" Text="0" FontFamily="Chiller"/>
         <TextBlock x:Name="st" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="402" Width="174" RenderTransformOrigin="0.515,0.525" FontSize="350" Text="0" FontFamily="Chiller"/>
+        <Label x:Name="lbl_main_Copy" Content="" HorizontalAlignment="Left" Margin="304,57,0,0" VerticalAlignment="Top" Height="81" Width="149" RenderTransformOrigin="12.795,-4.317" FontSize="50" FontFamily="Chiller" Opacity="0.5"/>
 
     </Grid>
 </Window>

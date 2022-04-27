@@ -112,6 +112,7 @@ namespace WpfApp1
                     else
                     {
                         lbl_main.Content = Starting.data;
+                        lbl_main_Copy.Content = Starting.parent.data;
                         nd.Text = Starting.ScoreMin.ToString();
                         st.Text = Starting.ScoreMax.ToString();
                     }

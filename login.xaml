@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="login" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="enter" HorizontalAlignment="Left" Margin="396,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Height="29" TextChanged="enter_TextChanged" FontStyle="Normal" FontSize="20" Visibility="Visible" FontFamily="Chiller" BorderBrush="White"/>
+        <TextBox x:Name="enter" HorizontalAlignment="Left" Margin="396,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98" Height="29"  FontStyle="Normal" FontSize="20" Visibility="Visible" FontFamily="Chiller" BorderBrush="White"/>
         <RadioButton x:Name="computer" Content="💻" HorizontalAlignment="Left" Margin="251,196,0,0" VerticalAlignment="Top" Height="34" Width="46" FontFamily="Calibri" FontSize="20"/>
         <RadioButton x:Name="human" Content="Me! " HorizontalAlignment="Left" Margin="361,196,0,0" VerticalAlignment="Top" Height="34" Width="60" FontFamily="Chiller" FontSize="25"/>
         <Button x:Name="proceed" Content="Next →" HorizontalAlignment="Left" Margin="541,309,0,0" VerticalAlignment="Top" Height="43" Width="143" Click="proceed_Click" Background="White" BorderBrush="White" FontFamily="Chiller" FontSize="26"/>

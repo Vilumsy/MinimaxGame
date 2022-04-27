@@ -47,6 +47,7 @@ namespace WpfApp1
                 mainWindow.lbl_main.Content = Starting.data;
                 mainWindow.st.Text = Starting.ScoreMax.ToString();
                 mainWindow.nd.Text = Starting.ScoreMin.ToString();
+                mainWindow.lbl_main_Copy.Content = Starting.parent.data;
                 mainWindow.Show();
 
 
@@ -66,11 +67,6 @@ namespace WpfApp1
             {
                 MessageBox.Show("Check input, somethings off");
             }
-        }
-
-        private void enter_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
