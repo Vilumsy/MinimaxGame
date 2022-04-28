@@ -28,19 +28,17 @@ namespace WpfApp1
 
         private void proceed_Click(object sender, RoutedEventArgs e)
         {
-            Regex rgx = new Regex("^[0-9]{4}$");
-            MainWindow mainWindow = new MainWindow();
-            Starting.data = Backend.SortString(enter.Text);
-            if (computer.IsChecked == true && human.IsChecked == false&& rgx.IsMatch(Starting.data))
+            Regex rgx = new Regex("^[0-9]{4}$");//regex lai pārbaudītu ievadīto skaitli
+            MainWindow mainWindow = new MainWindow();//nepieciešams lai varētu palaist gaveno logu
+            Starting.data = Backend.SortString(enter.Text);//ja tiek ievadīts skaitlis ne dilstošā secībā, tad tas tiek sakārtots
+            if (computer.IsChecked == true && rgx.IsMatch(Starting.data))
             {
-                Backend.createTree2(Starting.data, Starting);
-                Backend.MiniMaxSmol(Starting);
+                Backend.createTree2(Starting.data, Starting);//veido koku
+                Backend.MiniMaxSmol(Starting);//pievieno minimax vērtības
                 Backend.aistarts = true;
-                var biggestMinimax = Backend.aistarts == true ?
-                    Starting.child.Where(x => x != null).Min(x => x.minimax) :
-                    Starting.child.Where(x => x != null).Max(x => x.minimax);
+                var bestMinimax = Starting.child.Where(x => x != null).Min(x => x.minimax);//izvēlās labāko gājienu
                 var MaxChild = from ch in Starting.child
-                               where ch.minimax == biggestMinimax
+                               where ch.minimax == bestMinimax
                                select ch;
                 Starting = MaxChild.First();
                 mainWindow.Starting = Starting;
@@ -53,14 +51,13 @@ namespace WpfApp1
 
 
             }
-            else if(computer.IsChecked == false&&human.IsChecked==true && rgx.IsMatch(Starting.data))
+            else if(human.IsChecked==true && rgx.IsMatch(Starting.data))
             {
-                Starting.data = Backend.SortString(enter.Text);
                 Backend.createTree2(Starting.data, Starting);
                 Backend.MiniMaxSmol(Starting);
+                Backend.aistarts = false;
                 mainWindow.Starting = Starting;
                 mainWindow.lbl_main.Content = Starting.data;
-                Backend.aistarts = false;
                 mainWindow.Show();
             }
             else

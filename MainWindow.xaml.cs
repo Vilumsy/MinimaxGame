@@ -35,13 +35,13 @@ namespace WpfApp1
         {
             Window1 win1 = new Window1();
 
-            string path = inp_box.Text;
+            string path = inp_box.Text;//cilvēka izdarītais gājiens (1,2 vai 3)
             try
             {
-                Starting = Starting.child[Convert.ToInt16(path, 10)-1];
+                Starting = Starting.child[Convert.ToInt16(path, 10)-1];//pārejam uz nākamo mezglu
 
 
-                if (Starting.data == "")
+                if (Starting.data == "")//tiek pārbaudīts vai nākamais mezgls nav galējais
                 {
                     win1.Score1.Text = Starting.ScoreMax.ToString();
                     win1.Score2.Text = Starting.ScoreMin.ToString();
@@ -73,14 +73,14 @@ namespace WpfApp1
 
                 }
                 else
-                {
+                {//dators izdara gājienu
                     var biggestMinimax = Backend.aistarts == true ? Starting.child.Where(x => x != null).Min(x => x.minimax) : 
                         Starting.child.Where(x => x != null).Max(x => x.minimax);
                     var MaxChild = from ch in Starting.child
                                    where ch.minimax == biggestMinimax
                                    select ch;
                     Starting = MaxChild.First();
-                    if (Starting.data == "")
+                    if (Starting.data == "")//jāpārbauda vēlreiz, jo iespējams dators izdarot savu gājienu ir sasniedzis finišu
                     {
                         win1.Score1.Text = Starting.ScoreMax.ToString();
                         win1.Score2.Text = Starting.ScoreMin.ToString();
@@ -111,7 +111,7 @@ namespace WpfApp1
                     }
                     else
                     {
-                        lbl_main.Content = Starting.data;
+                        lbl_main.Content = Starting.data;//maina vērtības nākamajam gājienam
                         lbl_main_Copy.Content = Starting.parent.data;
                         nd.Text = Starting.ScoreMin.ToString();
                         st.Text = Starting.ScoreMax.ToString();
